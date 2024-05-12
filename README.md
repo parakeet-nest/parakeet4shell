@@ -1,6 +1,6 @@
 # Parakeet4Shell
 
-🦜🪺🐚 **Parakeet4Shell** is a set of scripts, made to simplify the development of small generative **Bash** AI applications with **Ollama** 🦙.
+🦜🪺🐚 **Parakeet4Shell** is a set of scripts, made to simplify the development of small **Bash** generative AI applications with **Ollama** 🦙.
 
 ## Requirements
 
