@@ -75,7 +75,7 @@ END_COMMENT
 function Chat() {
     OLLAMA_URL="${1}"
     DATA="${2}"
-
+    # --silent
     JSON_RESULT=$(curl --silent ${OLLAMA_URL}/api/chat \
         -H "Content-Type: application/json" \
         -d "${DATA}"

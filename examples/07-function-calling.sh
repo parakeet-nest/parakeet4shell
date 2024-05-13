@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# ✋ This example is a wip 🚧
 . "../lib/parakeet.sh"
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
