@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- Linux (right now, it's just tested on Ubuntu and does not work on MacOS - 🚧 wip)
+- Linux (right now, it's just tested on Ubuntu but it should work on MacOS - 🚧 wip)
 - jq (https://stedolan.github.io/jq/) - optional but useful
 - curl (https://curl.se/)
 
@@ -12,14 +12,15 @@
 
 Add this at the beginning of your script:
 
-```bash
+```bash {"id":"01HXRFEAZ479XHVVEMNH6E5KV9"}
 . "./lib/parakeet.sh"
 ```
+
 > Let's have a look to the `example` folder.
 
 ### Chat completion without streaming
 
-```bash
+```bash {"id":"01HXRFEAZ479XHVVEMNMP4QXZA"}
 #!/bin/bash
 . "./lib/parakeet.sh"
 
@@ -65,7 +66,7 @@ echo "${messageContent}"
 
 ### Chat completion with streaming
 
-```bash
+```bash {"id":"01HXRFEAZ479XHVVEMNNMQTRJG"}
 #!/bin/bash
 . "./lib/parakeet.sh"
 
@@ -114,7 +115,7 @@ function onChunk() {
 ChatStream "${OLLAMA_URL}" "${DATA}" onChunk
 ```
 
-## Acknowledgments: 
+## Acknowledgments:
 
 - Thanks to [Sylvain](https://github.com/swallez) for the discussion on curl callbacks.
 - Thanks to [Gemini](https://gemini.google.com/app) for all the discussions on Bash.

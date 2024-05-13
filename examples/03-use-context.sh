@@ -4,7 +4,7 @@
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
-MODEL="tinyllama"
+MODEL="tinydolphin"
 
 read -r -d '' USER_CONTENT <<- EOM
 [Brief] Who is James T Kirk?
@@ -64,3 +64,5 @@ read -r -d '' DATA <<- EOM
 EOM
 
 GenerateStream "${OLLAMA_URL}" "${DATA}" onChunk
+
+echo ""
