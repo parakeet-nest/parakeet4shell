@@ -70,5 +70,12 @@ messageContent=$(echo "${jsonResult}" | jq '.message.content')
 echo "🤖 You should call this tool with these parameters:"
 echo "$messageContent" | jq -r 'tostring' | jq -c '{ tool, parameters }'
 
+toolName=$(echo "$messageContent" | jq -r 'tostring' | jq -r '.tool')
+toolParameters=$(echo "$messageContent" | jq -r 'tostring' | jq -r '.parameters')
 
+echo ""
+function call_tool() {
+    echo "🤖 Calling tool: ${1} with parameters: ${2}"
+}
 
+call_tool $toolName "$toolParameters"
