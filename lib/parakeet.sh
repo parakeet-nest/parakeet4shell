@@ -75,7 +75,7 @@ END_COMMENT
 function Chat() {
     OLLAMA_URL="${1}"
     DATA="${2}"
-    # --silent
+
     JSON_RESULT=$(curl --silent ${OLLAMA_URL}/api/chat \
         -H "Content-Type: application/json" \
         -d "${DATA}"
@@ -105,4 +105,27 @@ function ChatStream() {
         do
             ${CALL_BACK} "${linestream}"
         done 
+}
+
+: <<'END_COMMENT'
+--------------
+  Embeddings
+--------------
+🚧 work in progress
+- use the Ollama API to generate embeddings
+- function for the cosine distance with awk
+- first iteration with in memory vectore store
+- add helpers to simplify the code
+END_COMMENT
+
+function CreateEmbedding() {
+    OLLAMA_URL="${1}"
+    DATA="${2}"
+    ID="${3}"
+    # --silent
+    JSON_RESULT=$(curl --silent ${OLLAMA_URL}/api/embeddings \
+        -H "Content-Type: application/json" \
+        -d "${DATA}"
+    )
+    echo "${JSON_RESULT}"    
 }

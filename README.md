@@ -7,12 +7,14 @@
 - Linux (right now, it's just tested on Ubuntu but it should work on MacOS - 🚧 wip)
 - jq (https://stedolan.github.io/jq/) - optional but useful
 - curl (https://curl.se/)
+- awk
+- bc
 
 ## How to use
 
 Add this at the beginning of your script:
 
-```bash {"id":"01HXRFEAZ479XHVVEMNH6E5KV9"}
+```bash
 . "./lib/parakeet.sh"
 ```
 
@@ -20,7 +22,7 @@ Add this at the beginning of your script:
 
 ### Chat completion without streaming
 
-```bash {"id":"01HXRFEAZ479XHVVEMNMP4QXZA"}
+```bash
 #!/bin/bash
 . "./lib/parakeet.sh"
 
@@ -66,7 +68,7 @@ echo "${messageContent}"
 
 ### Chat completion with streaming
 
-```bash {"id":"01HXRFEAZ479XHVVEMNNMQTRJG"}
+```bash
 #!/bin/bash
 . "./lib/parakeet.sh"
 

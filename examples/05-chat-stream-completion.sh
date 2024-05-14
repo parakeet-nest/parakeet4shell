@@ -3,8 +3,9 @@
 . "../lib/parakeet.sh"
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
+#OLLAMA_URL="http://bob.local:11434" # <--- 👋 this is my Raspberry PI
 
-MODEL="tinyllama"
+MODEL="tinydolphin"
 
 read -r -d '' SYSTEM_CONTENT <<- EOM
 You are an expert of the StarTrek universe. 
