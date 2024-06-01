@@ -4,7 +4,7 @@
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
-MODEL="tinyllama"
+MODEL="tinydolphin"
 
 read -r -d '' SYSTEM_CONTENT <<- EOM
 You are a helpful AI assistant. The user will enter a country name.
@@ -14,7 +14,7 @@ Output the results in JSON format.
 EOM
 
 read -r -d '' USER_CONTENT <<- EOM
-France
+Suisse
 EOM
 
 SYSTEM_CONTENT=$(Sanitize "${SYSTEM_CONTENT}")

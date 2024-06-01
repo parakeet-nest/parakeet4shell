@@ -1,7 +1,7 @@
 #!/bin/bash
 # Parakeet 🦜🪺🐚 v0.0.0 loaded!"
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 Generate -Generates a response using the OLLAMA API.
 
  Args:
@@ -10,7 +10,7 @@ Generate -Generates a response using the OLLAMA API.
 
  Returns:
     str: The JSON response from the API, containing the generated response and context.
-END_COMMENT
+COMMENT
 function Generate() {
     OLLAMA_URL="${1}"
     DATA="${2}"
@@ -22,7 +22,7 @@ function Generate() {
     echo "${JSON_RESULT}"
 }
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 Sanitize - Sanitizes the given content by removing any newlines.
 
  Args:
@@ -30,14 +30,14 @@ Sanitize - Sanitizes the given content by removing any newlines.
 
  Returns:
     str: The sanitized content.
-END_COMMENT
+COMMENT
 function Sanitize() {
     CONTENT="${1}"
     CONTENT=$(echo ${CONTENT} | tr -d '\n')
     echo "${CONTENT}"
 }
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 GenerateStream - Generates a stream of data by sending a request to the specified URL with the given data.
 
  Args:
@@ -47,7 +47,7 @@ GenerateStream - Generates a stream of data by sending a request to the specifie
 
  Returns:
     None
-END_COMMENT
+COMMENT
 function GenerateStream() {
     OLLAMA_URL="${1}"
     DATA="${2}"
@@ -62,7 +62,7 @@ function GenerateStream() {
 
 }
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 Chat - Generates a response using the OLLAMA API.
 
  Args:
@@ -71,7 +71,7 @@ Chat - Generates a response using the OLLAMA API.
 
  Returns:
     str: The JSON response from the API, containing the generated response and context.
-END_COMMENT
+COMMENT
 function Chat() {
     OLLAMA_URL="${1}"
     DATA="${2}"
@@ -83,7 +83,7 @@ function Chat() {
     echo "${JSON_RESULT}"
 }
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 ChatStream - Generates a response using the OLLAMA API in a streaming manner.
 
  Args:
@@ -93,7 +93,7 @@ ChatStream - Generates a response using the OLLAMA API in a streaming manner.
 
  Returns:
    None
-END_COMMENT
+COMMENT
 function ChatStream() {
     OLLAMA_URL="${1}"
     DATA="${2}"
@@ -107,7 +107,7 @@ function ChatStream() {
         done 
 }
 
-: <<'END_COMMENT'
+: <<'COMMENT'
 --------------
   Embeddings
 --------------
@@ -116,8 +116,7 @@ function ChatStream() {
 - function for the cosine distance with awk
 - first iteration with in memory vectore store
 - add helpers to simplify the code
-END_COMMENT
-
+COMMENT
 function CreateEmbedding() {
     OLLAMA_URL="${1}"
     DATA="${2}"

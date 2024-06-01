@@ -1,7 +1,7 @@
 #!/bin/bash
 # ✋ This example is a wip 🚧
 . "../lib/parakeet.sh"
-
+#OLLAMA_URL="http://bob.local:11434"
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
 MODEL="qwen:0.5b"
@@ -48,6 +48,10 @@ The pineapple pizza is the best pizza of the world for the following reasons:
 - Textural Delight:  The soft, juicy pineapple chunks add a delightful textural contrast to the crispy crust and gooey cheese. It's a party in your mouth!
 - Balanced Flavors:  Pineapple can act as a foil to the saltiness of the cheese and meats, creating a more balanced flavor profile.
 - Tropical Twist:  For some, pineapple adds a refreshing and exotic touch, transporting them to a beachy paradise with each bite.
+EOM
+
+read -r -d '' DOCS[006] <<- EOM
+In progress
 EOM
 
 function generate_query_payload() {
@@ -124,8 +128,8 @@ EOM
 embedding=$(CreateEmbedding "${OLLAMA_URL}" "${DATA}" "my_question")
 vector_from_question=$(echo ${embedding} | jq -r '.embedding' | jq -r 'tostring')
 
-echo "🔎 Find the best similarity in the docs..."
-limit=0.0
+echo "🔎 Find the similarities in the docs..."
+limit=0.3
 selected_doc_key=""
 for key in "${!VECTOR_STORE[@]}"; do
   vector_from_doc=$(echo ${VECTOR_STORE[$key]} | jq -r '.embedding' | jq -r 'tostring')

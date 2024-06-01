@@ -4,7 +4,9 @@
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
-MODEL="phi3"
+#MODEL="phi3"
+MODEL="tinyllama"
+#MODEL="qwen:0.5b"
 #MODEL="tinydolphin"
 #MODEL="gemma:2b"
 #MODEL="qwen:0.5b" -> does not work
@@ -24,7 +26,7 @@ Output the results in JSON format and trim the spaces of the sentence.
 EOM
 
 read -r -d '' USER_CONTENT <<- EOM
-chicken
+golden fish
 EOM
 
 SYSTEM_CONTENT=$(Sanitize "${SYSTEM_CONTENT}")

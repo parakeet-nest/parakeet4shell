@@ -6,6 +6,7 @@ OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
 #MODEL="phi3"
 MODEL="tinyllama"
+#MODEL="qwen:0.5b" 
 
 read -r -d '' TOOLS_CONTENT <<- EOM
 You have access to the following tools:
