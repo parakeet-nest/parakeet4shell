@@ -128,3 +128,20 @@ function CreateEmbedding() {
     )
     echo "${JSON_RESULT}"    
 }
+
+function TrimDoubleQuotes() {
+    messageContent="${1}"
+    # remove double quotes at the start and the end of the string
+    content="${messageContent%\"}"
+    content="${content#\"}"
+
+    echo "$content"
+
+} 
+
+function PrettyPrint() {
+    content="${1}"
+    # The -e option in the echo command enables the interpretation of escape sequences in the string to be displayed.
+    # sed 's/\\"/"/g' removes all the \ from the \"
+    echo -e "${content}" | sed 's/\\"/"/g'
+}

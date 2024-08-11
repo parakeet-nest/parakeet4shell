@@ -4,7 +4,7 @@
 
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
-MODEL="tinyllama"
+MODEL="tinyllama:latest"
 
 read -r -d '' USER_CONTENT <<- EOM
 Who is James T Kirk?

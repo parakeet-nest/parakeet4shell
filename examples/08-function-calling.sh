@@ -5,8 +5,8 @@
 OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
 
 #MODEL="phi3"
-MODEL="tinyllama"
-#MODEL="qwen:0.5b" 
+#MODEL="tinyllama"
+MODEL="qwen2:0.5b" 
 
 read -r -d '' TOOLS_CONTENT <<- EOM
 You have access to the following tools:
@@ -39,6 +39,11 @@ EOM
 read -r -d '' USER_CONTENT <<- EOM
 add 5 and 40
 EOM
+
+#read -r -d '' USER_CONTENT <<- EOM
+#say hello to bob
+#EOM
+
 # Try with: 
 # say hello to bob
 # add 5 and 40
